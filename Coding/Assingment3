@@ -1,0 +1,59 @@
+Question: Create two arrays of reg type capable of storing 15 elements. Use $urandom function to add 15 values to the array. Print the value of all the elements of the array on a single line.
+
+/ Create two arrays of reg type capable of storing 15 elements
+
+  reg [7:0] arr1 [0:14];
+
+  reg [7:0] arr2 [0:14];
+
+
+
+  initial begin
+
+    // Fill both arrays with random values using $urandom
+
+    for (int i = 0; i < 15; i++) begin
+
+      arr1[i] = $urandom;
+
+      arr2[i] = $urandom;
+
+    end
+
+
+
+    // Print the values of arr1 on a single line
+
+    $write("Array 1 values: ");
+
+    for (int i = 0; i < 15; i++) begin
+
+      $write("%0d ", arr1[i]);
+
+    end
+
+    $display(""); // move to next line
+
+
+
+    // Print the values of arr2 on a single line
+
+    $write("Array 2 values: ");
+
+    for (int i = 0; i < 15; i++) begin
+
+      $write("%0d ", arr2[i]);
+
+    end
+
+    $display(""); // move to next line
+
+
+
+    $finish;
+
+  end
+
+
+
+endmodule

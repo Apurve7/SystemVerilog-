@@ -1,0 +1,29 @@
+Question: Create a Class consisting of 3 data members each of unsigned integer type. Initialize them to 45,78, and 90. Use the display function to print the values on the console.
+
+
+
+
+class second;
+  int num1 = 45;
+
+  int num2 = 78;
+
+  int num3 = 90;
+
+endclass
+
+module tb;
+
+  second a;
+
+  initial begin
+
+    a=new();
+
+    #1;
+
+    $display("Value of data : %0d and data2 : %0d and data3 :%0d",a.num1, a.num2,a.num3);
+
+  end
+
+endmodule

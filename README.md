@@ -1,4 +1,6 @@
 # SystemVerilog – Verification Series Part 1: SystemVerilog Essentials
+All mentioned questions are solved with full honesty having my time and efforts pput into them
+
 
 This repository contains the solutions to assignments from the **Verification Series Part 1: SystemVerilog Essentials** course.  
 The repository focuses on understanding the theoretical and practical aspects of **SystemVerilog**, which is widely used in hardware design and verification.

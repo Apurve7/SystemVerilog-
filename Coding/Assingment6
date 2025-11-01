@@ -1,0 +1,25 @@
+Question: Create a function that will perform the multiplication of the two unsigned integer variables. Compare values return by function with the expected result and if both values match send "Test Passed" to Console else send "Test Failed".
+
+
+module tb();
+
+  function res[7:0] mul(input[3:0],a,b);
+
+    return a*b;
+
+  endfunction
+
+
+  bit[7:0]res = 0 ;
+
+    initial begin
+
+    
+      res=mul(4'b0100,4'b0010);
+
+      $display("Value of addition:%0d",res);
+
+    
+    end
+
+endmodule

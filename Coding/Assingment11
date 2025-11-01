@@ -1,0 +1,32 @@
+Question: Assume generator class consists of three 8-bit data members (x,y, and z). Write a code to generate 20 random values for all the data members at an interval of 20 ns.
+
+
+class sample;
+
+rand bit[7:0] x;
+rand bit[7:0] y;
+rand bit[7:0] z;
+
+endclass
+
+
+
+module tb;
+
+sample s = new();
+
+initial begin
+
+repeat(20) begin
+
+assert(s.randomize()) else $display("Randomization Failed!!") ;
+
+  $display("x = %d  | y = %d  | z = %d  | time %0t",s.x,s.y,s.z,$time);
+
+  #20;
+
+end
+
+end
+
+endmodule

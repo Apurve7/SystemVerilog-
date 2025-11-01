@@ -1,0 +1,78 @@
+Question: Create a task that will generate stimulus for addr , wr, and en signal as mentioned in a waveform of the Instruction tab. Assume address is 6-bit wide while en and wr both are 1-bit wide. The stimulus should be sent on a positive edge of 25 MHz clock signal.
+
+module tb;
+
+ 
+
+  bit[5:0]addr;
+
+  bit wr;
+
+  bit en;
+
+ 
+
+  bit clk=0;
+
+ 
+
+  always #20 clk=~clk;
+
+ 
+
+  task stimulus();
+
+   
+
+    addr =$urandom();
+
+    wr = 1;
+
+    en = 1;
+
+  endtask
+
+ 
+
+task stim_clk ();
+
+    @(posedge clk);   
+
+    stimulus();
+
+  endtask
+
+ 
+
+  initial begin
+
+        #400;
+
+        $finish();
+
+       
+
+      end
+
+ 
+
+  initial begin
+
+    $dumpfile("dump.vcd");
+
+    $dumpvars;
+
+     for(int i = 0; i< 11 ; i++) begin
+
+      stim_clk();
+
+    end
+
+   
+
+end
+
+ 
+
+endmodule
+
